@@ -128,7 +128,7 @@ public abstract class Controlled extends Alive {
         this.cardinalidad = cardinalidad;
     }
 
-    private void movimientoControlado() {
+    public void movimientoControlado() {
 
         ajustarMovimiento();
 
@@ -139,7 +139,7 @@ public abstract class Controlled extends Alive {
         this.dY = 0;
     }
 
-    private void ajustarMovimiento() {
+    public void ajustarMovimiento() {
 
         if (this.up && !this.stopUp) {
 
