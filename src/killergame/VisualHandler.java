@@ -6,8 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -24,6 +22,7 @@ public class VisualHandler implements Runnable {
     private String side;
     private KillerClient client;
     private boolean conectado;
+    private double okTime;
 
     public VisualHandler(KillerGame game, String side) {
 
@@ -49,18 +48,13 @@ public class VisualHandler implements Runnable {
                     processMessage();
                 }
 
-                Thread.sleep(100);
+                Thread.sleep(50);
 
             } catch (InterruptedException e) {
                 System.out.println(e);
-            } catch (IOException e) {
-                try {
-                    this.socket.close();
-                    this.socket = null;
-                    this.conectado = false;
-                } catch (IOException ex) {
-                    System.out.println(ex);
-                }
+            } catch (IOException | NullPointerException e) {
+
+                setSocketNull();
             }
         }
 
@@ -73,6 +67,9 @@ public class VisualHandler implements Runnable {
         String[] info = line.split("/");
 
         switch (info[0]) {
+            case "ok":
+                receiveOk();
+                break;
             case "start":
                 receiveStart();
                 break;
@@ -89,6 +86,12 @@ public class VisualHandler implements Runnable {
                 System.out.println("Mensaje desconocido: " + info[0]);
                 break;
         }
+    }
+
+    public void receiveOk() {
+
+        this.okTime = System.currentTimeMillis();
+        this.out.println("ok");
     }
 
     public void receiveStart() {
@@ -191,6 +194,11 @@ public class VisualHandler implements Runnable {
         this.out.println(mensaje);
     }
 
+    public void sendOk() {
+
+        this.out.println("ok");
+    }
+
     public void sendStart() {
 
         this.out.println("start");
@@ -286,6 +294,11 @@ public class VisualHandler implements Runnable {
         return this.ip;
     }
 
+    public double getOkTime() {
+
+        return this.okTime;
+    }
+
     public int getPuerto() {
 
         return this.puerto;
@@ -322,6 +335,22 @@ public class VisualHandler implements Runnable {
             this.conectado = true;
             this.game.moduloVisualConectado(this);
 
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+    }
+
+    public synchronized void setSocketNull() {
+
+        try {
+
+            if (this.socket != null) {
+                this.socket.close();
+            }
+            this.socket = null;
+            this.in = null;
+            this.out = null;
+            this.conectado = false;
         } catch (IOException e) {
             System.out.println(e);
         }

@@ -31,14 +31,19 @@ public class KillerClient implements Runnable {
                         Socket socket = new Socket(handler.getIp(), handler.getPuerto());
                         iniciarContacto(socket);
                         handler.setSocket(socket);
+                        handler.sendOk();
+                    }
+                } else {
+
+                    double time = System.currentTimeMillis();
+                    if ((time - handler.getOkTime()) >= 1000) {
+                        handler.setSocketNull();
                     }
                 }
 
-                Thread.sleep(300);
+                Thread.sleep(200);
 
-            } catch (InterruptedException e) {
-                System.out.println(e);
-            } catch (IOException e) {
+            } catch (InterruptedException | IOException e) {
                 System.out.println(e);
             }
         }
