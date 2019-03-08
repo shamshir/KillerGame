@@ -22,7 +22,7 @@ public class VisualHandler implements Runnable {
     private String side;
     private KillerClient client;
     private boolean conectado;
-    private double okTime;
+    private long okTime;
 
     public VisualHandler(KillerGame game, String side) {
 
@@ -294,7 +294,7 @@ public class VisualHandler implements Runnable {
         return this.ip;
     }
 
-    public double getOkTime() {
+    public long getOkTime() {
 
         return this.okTime;
     }
@@ -333,6 +333,8 @@ public class VisualHandler implements Runnable {
             this.in = new BufferedReader(new InputStreamReader(this.socket.getInputStream()));
             this.out = new PrintWriter(this.socket.getOutputStream(), true);
             this.conectado = true;
+            sendOk();
+            this.okTime = System.currentTimeMillis();
             this.game.moduloVisualConectado(this);
 
         } catch (IOException e) {

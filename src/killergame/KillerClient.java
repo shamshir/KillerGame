@@ -35,8 +35,9 @@ public class KillerClient implements Runnable {
                     }
                 } else {
 
-                    double time = System.currentTimeMillis();
-                    if ((time - handler.getOkTime()) >= 1000) {
+                    long time = System.currentTimeMillis();
+                    System.out.println(time - handler.getOkTime());
+                    if ((time - handler.getOkTime()) > 3000) {
                         handler.setSocketNull();
                     }
                 }
