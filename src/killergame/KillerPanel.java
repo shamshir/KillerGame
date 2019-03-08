@@ -55,8 +55,8 @@ public class KillerPanel extends JPanel implements ActionListener {
     ###### Interface Generation ################################################
     ##########################################################################*/
     private void generarUI() {
-
-        this.setSize(1000, 300);
+        
+        this.setSize(800, 300);
         this.setBackground(Color.CYAN);
         this.setLayout(new GridBagLayout());
         GridBagConstraints ajustesGrid = new GridBagConstraints();
@@ -70,7 +70,7 @@ public class KillerPanel extends JPanel implements ActionListener {
         /* -------- Gestión Puerto Servidor -------- */
  /* Label Puerto Servidor */
         this.labelServer = new JLabel("Puerto Servidor");
-        this.labelServer.setFont(new Font("Verdana", Font.PLAIN, 18));
+        this.labelServer.setFont(new Font("Verdana", Font.PLAIN, 16));
         this.labelServer.setHorizontalAlignment(JTextField.CENTER);
         ajustesGrid.gridx = 0;
         ajustesGrid.gridy = 0;
@@ -80,7 +80,7 @@ public class KillerPanel extends JPanel implements ActionListener {
 
         /* Input Puerto Servidor */
         this.portServer = new JTextField();
-        this.portServer.setFont(new Font("Verdana", Font.PLAIN, 18));
+        this.portServer.setFont(new Font("Verdana", Font.PLAIN, 16));
         this.portServer.setHorizontalAlignment(JTextField.CENTER);
         this.portServer.setText("8000");
         ajustesGrid.gridx = 1;
@@ -91,7 +91,7 @@ public class KillerPanel extends JPanel implements ActionListener {
 
         /* Botón Conectar Servidor */
         this.conectarServer = new JButton("Conectar Servidor");
-        this.conectarServer.setFont(new Font("Verdana", Font.PLAIN, 18));
+        this.conectarServer.setFont(new Font("Verdana", Font.PLAIN, 16));
         this.conectarServer.setHorizontalAlignment(JTextField.CENTER);
         this.conectarServer.addActionListener(this);
         ajustesGrid.gridx = 2;
@@ -102,7 +102,7 @@ public class KillerPanel extends JPanel implements ActionListener {
 
         /* Label Estado Servidor */
         this.estadoServer = new JLabel("Servidor Offline");
-        this.estadoServer.setFont(new Font("Verdana", Font.PLAIN, 18));
+        this.estadoServer.setFont(new Font("Verdana", Font.PLAIN, 16));
         this.estadoServer.setHorizontalAlignment(JTextField.CENTER);
         ajustesGrid.gridx = 3;
         ajustesGrid.gridy = 0;
@@ -113,7 +113,7 @@ public class KillerPanel extends JPanel implements ActionListener {
         /* -------- Gestión Left Killer -------- */
  /* Label Estado Left */
         this.estadoLeft = new JLabel("No Conectado");
-        this.estadoLeft.setFont(new Font("Verdana", Font.PLAIN, 18));
+        this.estadoLeft.setFont(new Font("Verdana", Font.PLAIN, 16));
         this.estadoLeft.setHorizontalAlignment(JTextField.CENTER);
         ajustesGrid.gridx = 0;
         ajustesGrid.gridy = 1;
@@ -123,7 +123,7 @@ public class KillerPanel extends JPanel implements ActionListener {
 
         /* Label Ip Left */
         this.labelIpLeft = new JLabel("IP LeftKiller");
-        this.labelIpLeft.setFont(new Font("Verdana", Font.PLAIN, 18));
+        this.labelIpLeft.setFont(new Font("Verdana", Font.PLAIN, 16));
         this.labelIpLeft.setHorizontalAlignment(JTextField.CENTER);
         ajustesGrid.gridx = 0;
         ajustesGrid.gridy = 2;
@@ -133,7 +133,7 @@ public class KillerPanel extends JPanel implements ActionListener {
 
         /* Input Ip Left */
         this.ipLeft = new JTextField();
-        this.ipLeft.setFont(new Font("Verdana", Font.PLAIN, 18));
+        this.ipLeft.setFont(new Font("Verdana", Font.PLAIN, 16));
         this.ipLeft.setHorizontalAlignment(JTextField.CENTER);
         this.ipLeft.setText("127.0.0.1");
         ajustesGrid.gridx = 1;
@@ -144,7 +144,7 @@ public class KillerPanel extends JPanel implements ActionListener {
 
         /* Label Puerto Left */
         this.labelPortLeft = new JLabel("Puerto LeftKiller");
-        this.labelPortLeft.setFont(new Font("Verdana", Font.PLAIN, 18));
+        this.labelPortLeft.setFont(new Font("Verdana", Font.PLAIN, 16));
         this.labelPortLeft.setHorizontalAlignment(JTextField.CENTER);
         ajustesGrid.gridx = 0;
         ajustesGrid.gridy = 3;
@@ -154,7 +154,7 @@ public class KillerPanel extends JPanel implements ActionListener {
 
         /* Input Puerto Left */
         this.portLeft = new JTextField();
-        this.portLeft.setFont(new Font("Verdana", Font.PLAIN, 18));
+        this.portLeft.setFont(new Font("Verdana", Font.PLAIN, 16));
         this.portLeft.setHorizontalAlignment(JTextField.CENTER);
         this.portLeft.setText("8000");
         ajustesGrid.gridx = 1;
@@ -165,7 +165,7 @@ public class KillerPanel extends JPanel implements ActionListener {
 
         /* Botón Conectar Left */
         this.conectarLeft = new JButton("Conectar Left Killer");
-        this.conectarLeft.setFont(new Font("Verdana", Font.PLAIN, 18));
+        this.conectarLeft.setFont(new Font("Verdana", Font.PLAIN, 16));
         this.conectarLeft.setHorizontalAlignment(JTextField.CENTER);
         this.conectarLeft.addActionListener(this);
         ajustesGrid.gridx = 0;
@@ -177,7 +177,7 @@ public class KillerPanel extends JPanel implements ActionListener {
         /* -------- Gestión Right Killer -------- */
  /* Label Estado Right */
         this.estadoRight = new JLabel("No Conectado");
-        this.estadoRight.setFont(new Font("Verdana", Font.PLAIN, 18));
+        this.estadoRight.setFont(new Font("Verdana", Font.PLAIN, 16));
         this.estadoRight.setHorizontalAlignment(JTextField.CENTER);
         ajustesGrid.gridx = 2;
         ajustesGrid.gridy = 1;
@@ -187,7 +187,7 @@ public class KillerPanel extends JPanel implements ActionListener {
 
         /* Label Ip Right */
         this.labelIpRight = new JLabel("IP RightKiller");
-        this.labelIpRight.setFont(new Font("Verdana", Font.PLAIN, 18));
+        this.labelIpRight.setFont(new Font("Verdana", Font.PLAIN, 16));
         this.labelIpRight.setHorizontalAlignment(JTextField.CENTER);
         ajustesGrid.gridx = 2;
         ajustesGrid.gridy = 2;
@@ -197,7 +197,7 @@ public class KillerPanel extends JPanel implements ActionListener {
 
         /* Input Ip Right */
         this.ipRight = new JTextField();
-        this.ipRight.setFont(new Font("Verdana", Font.PLAIN, 18));
+        this.ipRight.setFont(new Font("Verdana", Font.PLAIN, 16));
         this.ipRight.setHorizontalAlignment(JTextField.CENTER);
         this.ipRight.setText("127.0.0.1");
         ajustesGrid.gridx = 3;
@@ -208,7 +208,7 @@ public class KillerPanel extends JPanel implements ActionListener {
 
         /* Label Puerto Right */
         this.labelPortRight = new JLabel("Puerto RightKiller");
-        this.labelPortRight.setFont(new Font("Verdana", Font.PLAIN, 18));
+        this.labelPortRight.setFont(new Font("Verdana", Font.PLAIN, 16));
         this.labelPortRight.setHorizontalAlignment(JTextField.CENTER);
         ajustesGrid.gridx = 2;
         ajustesGrid.gridy = 3;
@@ -218,7 +218,7 @@ public class KillerPanel extends JPanel implements ActionListener {
 
         /* Input Puerto Right */
         this.portRigth = new JTextField();
-        this.portRigth.setFont(new Font("Verdana", Font.PLAIN, 18));
+        this.portRigth.setFont(new Font("Verdana", Font.PLAIN, 16));
         this.portRigth.setHorizontalAlignment(JTextField.CENTER);
         this.portRigth.setText("8000");
         ajustesGrid.gridx = 3;
@@ -229,7 +229,7 @@ public class KillerPanel extends JPanel implements ActionListener {
 
         /* Botón Conectar Right */
         this.conectarRight = new JButton("Conectar Right Killer");
-        this.conectarRight.setFont(new Font("Verdana", Font.PLAIN, 18));
+        this.conectarRight.setFont(new Font("Verdana", Font.PLAIN, 16));
         this.conectarRight.setHorizontalAlignment(JTextField.CENTER);
         this.conectarRight.addActionListener(this);
         ajustesGrid.gridx = 2;
@@ -240,7 +240,7 @@ public class KillerPanel extends JPanel implements ActionListener {
 
         /* -------- Gestión Botón Start -------- */
         this.start = new JButton("Start");
-        this.start.setFont(new Font("Verdana", Font.PLAIN, 18));
+        this.start.setFont(new Font("Verdana", Font.PLAIN, 16));
         this.start.setHorizontalAlignment(JTextField.CENTER);
         this.start.addActionListener(this);
         ajustesGrid.gridx = 0;

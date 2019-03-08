@@ -49,6 +49,7 @@ public class KillerGame extends JFrame {
             } else if (this.leftKiller.getSocket() != null) {
 
                 this.leftKiller.sendStart();
+                
             }
 
             /* Actualizamos estado y ocultamos el panel de configuración */
